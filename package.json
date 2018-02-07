@@ -1,0 +1,36 @@
+{
+  "name": "binary-array",
+  "version": "0.0.1",
+  "description": "this is simply binary search library for Node.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "tslint --format stylish 'index.ts'",
+    "compile": "tsc",
+    "build": "yarn lint && yarn compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koolii/node-binary-array.git"
+  },
+  "keywords": [
+    "node",
+    "typescript",
+    "array",
+    "binary-search"
+  ],
+  "author": "koolii",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/koolii/node-binary-array/issues"
+  },
+  "homepage": "https://github.com/koolii/node-binary-array#readme",
+  "devDependencies": {
+    "tslint": "^5.9.1",
+    "tslint-config-airbnb": "^5.5.0",
+    "tslint-loader": "^3.5.3",
+    "tslint-react": "^3.4.0",
+    "tsutils": "^2.21.0"
+  }
+}
