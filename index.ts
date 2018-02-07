@@ -7,9 +7,7 @@ const getRoughPos = (array: any, target: any) => {
   let head = 0
   let tail = array.length - 1
 
-
   while (head <= tail) {
-    // console.log(`head: ${head}, tail: ${tail}`)
     const center = Math.floor((head + tail) / 2)
     const val = array[center]
 
@@ -23,7 +21,6 @@ const getRoughPos = (array: any, target: any) => {
 
     return center
   }
-  // console.log(`val: ${array[head]}`)
   return head < 0 ? 0 : head
 }
 
@@ -31,9 +28,7 @@ const search = (array: any, target: any) => {
   let pos = getRoughPos(array, target)
 
   if (pos !== 0) {
-    while (array[pos] === array[pos - 1]) {
-      pos -= 1
-    }
+    while (array[pos] === array[pos - 1]) { pos -= 1 }
   }
 
   return pos
