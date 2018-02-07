@@ -27,8 +27,8 @@ const getRoughPos = (array: any, target: any) => {
 const search = (array: any, target: any) => {
   let pos = getRoughPos(array, target)
 
-  if (pos !== 0) {
-    while (array[pos] === array[pos - 1]) { pos -= 1 }
+  while (pos !== 0 && array[pos] === array[pos - 1]) {
+    pos -= 1
   }
 
   return pos
