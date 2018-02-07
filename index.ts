@@ -23,13 +23,13 @@ const getRoughPos = (array: any, target: any) => {
     const center = Math.floor((head + tail) / 2)
     const val = array[center].id
 
-    if (val === target) {
-      return center
-    } else if (val < target) {
+    if (val < target) {
       head = center + 1
-    } else {
+    } else if (val > target) {
       tail = center - 1
     }
+
+    return center
   }
   // console.log(`val: ${array[tail]}`)
   return tail < 0 ? 0 : tail
