@@ -1,18 +1,7 @@
-/**
- * 大量の配列の中から特定の条件のオブジェクトをある程度の精度で抜き出す
- * それぞれのオブジェクトはオブジェクトが生成された時刻を保持しており
- * 引数に渡された時刻以降のオブジェクトを取得するようにする
- */
-
-const init = () => {
-  const array = []
-  const MAX = 1000000
-  for (let i = 0; i < MAX; i += 1) {
-    array.push({ id: i + Date.now(), idx: i })
-  }
-  // const array = [10, 10, 10, 10, 11, 11, 11, 12, 13, 16, 19, 21, 24, 25, 30, 35]
-  return array
-}
+/** this function works
+ * 与えられた配列の中から合致、もしくは、一番近しい値を探索する二分探索
+ * 値の重複しているものに合致した場合は、一番若いインデックスまで遡る
+*/
 
 const getRoughPos = (array: any, target: any) => {
   let head = 0
