@@ -38,3 +38,5 @@ const search = (array: any, target: any) => {
 
   return pos
 }
+
+export default search
