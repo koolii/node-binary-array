@@ -3,7 +3,7 @@
  * 値の重複しているものに合致した場合は、一番若いインデックスまで遡る
 */
 
-const getRoughPos = (array: any, target: any, { more = true }) => {
+function getClosestPosition(array: any, target: any, { more = true }) {
   let head = 0
   let tail = array.length - 1
 
@@ -25,8 +25,8 @@ const getRoughPos = (array: any, target: any, { more = true }) => {
   return more ? head : tail < 0 ? 0 : tail
 }
 
-const search = (array: any, target: any, option: any = {}) => {
-  let pos = getRoughPos(array, target, option)
+function search(array: any, target: any, option: any = {}) {
+  let pos = getClosestPosition(array, target, option)
 
   while (pos !== 0 && array[pos] === array[pos - 1]) {
     pos -= 1
@@ -35,4 +35,11 @@ const search = (array: any, target: any, option: any = {}) => {
   return pos
 }
 
-export default search
+function searchOrPrevious(array: any, target: number) {
+  return search(array, target, { more: false })
+}
+function searchOrNext(array: any, target: number) {
+  return search(array, target, { more: true })
+}
+
+export default { searchOrPrevious, searchOrNext }
