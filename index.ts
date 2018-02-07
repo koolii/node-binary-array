@@ -25,7 +25,7 @@ const getRoughPos = (array: any, target: any, { more = true }) => {
   return more ? head : tail < 0 ? 0 : tail
 }
 
-const search = (array: any, target: any, option: any) => {
+const search = (array: any, target: any, option: any = {}) => {
   let pos = getRoughPos(array, target, option)
 
   while (pos !== 0 && array[pos] === array[pos - 1]) {
