@@ -5,7 +5,7 @@
 
 const getRoughPos = (array: any, target: any) => {
   let head = 0
-  let tail = array.length
+  let tail = array.length - 1
 
   while (head <= tail) {
     // console.log(`head: ${head}, tail: ${tail}`)
@@ -14,8 +14,10 @@ const getRoughPos = (array: any, target: any) => {
 
     if (val < target) {
       head = center + 1
+      continue
     } else if (val > target) {
       tail = center - 1
+      continue
     }
 
     return center
